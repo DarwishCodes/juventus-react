@@ -1,0 +1,78 @@
+.search {
+  margin-left: 3rem;
+  display: block;
+
+  &__input-wraper {
+    position: relative;
+  }
+
+  &__input {
+    background-color: $color-secondry;
+    outline: none;
+    border: 1px solid rgba($color-primary-light, 0.5);
+    padding: 1rem 4rem;
+    color: $color-white;
+    font-family: inherit;
+    font-weight: $font-weight-medium;
+    font-size: 1.6rem;
+    transition: all 0.5s;
+    width: 80%;
+
+    @include addMediaQuery(tablet) {
+      width: 100%;
+    }
+
+    &:focus {
+      // box-shadow: 0rem 0.2rem 2rem rgba($color-secondry-dark, 0.8);
+      border: 1px solid rgba($color-primary-light, 0.8);
+      width: 90%;
+      background-color: rgba($color-white, 0.8);
+      color: rgba($color-secondry-dark, 1);
+
+      @include addMediaQuery(tablet) {
+        width: 100%;
+      }
+    }
+
+    &:focus ~ .search__icon {
+      color: $color-secondry-light;
+    }
+  }
+
+  &__input--header {
+    &:focus {
+      // box-shadow: 0rem 0.2rem 2rem rgba($color-secondry-dark, 0.8);
+      width: 20%;
+    }
+
+    &:focus ~ .search__icon {
+      color: $color-secondry-light;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    margin-left: 1.5rem;
+    font-size: 2.2rem;
+    color: $color-primary;
+
+    &--header {
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  &__results {
+    display: none;
+  }
+
+  &__header {
+    padding-left: 9rem;
+    padding-top: 2.7rem;
+    display: block;
+    opacity: 1;
+    float: left;
+  }
+}

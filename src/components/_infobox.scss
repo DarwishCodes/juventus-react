@@ -1,0 +1,66 @@
+.infobox {
+  background-image: linear-gradient(
+    108deg,
+    rgba($color-primary-light, 0.9) 0%,
+    rgba($color-primary, 0.9) 50%
+  );
+  background-color: rgba($color-secondry-light, 0.5);
+  background-size: 0%;
+  background-repeat: no-repeat;
+  padding: 2rem 3rem;
+  transition: all 0.5s;
+  opacity: 0;
+  cursor: default;
+  min-height: 22.5rem;
+  backface-visibility: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  &__icon {
+    display: block;
+    font-size: 6rem;
+    color: $color-primary-light;
+    transition: all 0.3s ease;
+  }
+
+  &__title {
+    display: block;
+    color: $color-primary-light;
+    font-size: 4.8rem;
+    letter-spacing: 0;
+    font-weight: $font-weight-regular;
+    transition: all 0.3s ease;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+    font-weight: $font-weight-regular;
+    letter-spacing: 0.5;
+    color: $color-white;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    box-shadow: 0rem 1rem 1rem rgba($color-black-1, 0.3);
+    transform: translateY(-2rem) translateX(1rem);
+    background-size: 100%;
+  }
+
+  &:hover &__title {
+    color: $color-secondry;
+  }
+
+  &:hover &__paragraph {
+    color: $color-secondry;
+  }
+
+  &:hover &__title {
+    color: $color-secondry;
+  }
+
+  &:hover &__icon {
+    color: $color-secondry;
+  }
+}

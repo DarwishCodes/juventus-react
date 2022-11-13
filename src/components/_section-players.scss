@@ -1,0 +1,219 @@
+.section-players {
+  position: relative;
+}
+
+.players {
+  font-size: 1.2rem;
+  font-weight: $font-weight-regular;
+
+  &__row {
+    background-color: rgba($color-black-1, 0.5);
+    overflow-x: hidden;
+    //deafult 114rem
+  }
+
+  &__box {
+    margin-left: 8%;
+    min-width: 10rem;
+    &:hover .players__card:not(:hover) {
+      filter: blur(2px) saturate(0);
+    }
+
+    @include addMediaQuery(tablet) {
+      &:hover .players__card:not(:hover) {
+        filter: none;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 15rem;
+    height: 29rem;
+    top: 31.8%;
+    // background-color: rgba($color-primary, 0);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 800;
+
+    // &::before {
+    //     content: "";
+    //     display: block;
+    //     position: absolute;
+    //     width: 5rem;
+    //     height: 5rem;
+    //     background-color: rgba($color-primary, 1);
+    //     opacity: 1;
+    //     transition: all 0.9s ease;
+    // }
+
+    // &:hover {
+    //     &::before {
+    //         opacity: 0;
+    //         transform: scale(1.4);
+    //     }
+
+    // }
+
+    &:hover {
+      // background-color: rgba($color-primary, 0.3);
+      // transform: scale(1.1);
+      opacity: 0.3;
+    }
+
+    &--left {
+      left: 0%;
+      background-image: linear-gradient(
+        to right,
+        rgba($color-primary, 0.7),
+        rgba($color-primary, 0.3),
+        rgba(0, 0, 1, 0),
+        rgba(0, 0, 1, 0)
+      );
+    }
+
+    &--right {
+      right: 0%;
+      background-image: linear-gradient(
+        to left,
+        rgba($color-primary, 0.7),
+        rgba($color-primary, 0.3),
+        rgba(0, 0, 1, 0),
+        rgba(0, 0, 1, 0)
+      );
+    }
+  }
+
+  &__container {
+    display: flex;
+    transition: all 0.3s linear;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+      border-radius: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $color-white;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary-dark;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-primary-dark;
+    }
+
+    min-width: 17rem;
+  }
+
+  &__position {
+    position: absolute;
+  }
+
+  &__card {
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 23%;
+    width: 17rem;
+    margin-left: 1rem;
+    background-image: linear-gradient(
+      to top,
+      rgba($color-primary, 0.7),
+      rgba($color-primary, 0.3),
+      rgba(0, 0, 1, 0),
+      rgba(0, 0, 1, 0)
+    );
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-out;
+    backface-visibility: hidden;
+
+    &:hover {
+      width: 30rem;
+    }
+
+    &:hover .players__img {
+      transform: translateY(2px) scale(1.2);
+    }
+
+    &:hover .players__caption {
+      opacity: 1;
+      left: 50%;
+    }
+
+    &:hover .players__check-box {
+      opacity: 1;
+    }
+
+    @include addMediaQuery(tablet) {
+      width: 30rem;
+      .players__img {
+        transform: translateY(2px) scale(1);
+      }
+      .players__caption {
+        opacity: 1;
+        left: 50%;
+      }
+      .players__check-box {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__caption {
+    color: $color-primary;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  &__check-box {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba($color-primary, 1);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.2s ease-out;
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+
+  &__check-box-icon {
+    position: absolute;
+    top: -59%;
+    left: 14%;
+    color: $color-white;
+    font-size: 5rem;
+    opacity: 0;
+  }
+
+  &__img {
+    display: inline-block;
+    width: 15rem;
+    height: auto;
+    margin-right: 1rem;
+    margin-top: 26px;
+    margin-left: 1rem;
+    cursor: pointer;
+    transform: translateY(2px);
+    transition: all 0.9s cubic-bezier(0.1, 0.47, 0.39, 0.83);
+    z-index: 5;
+    transform: translateY(1rem);
+  }
+}
