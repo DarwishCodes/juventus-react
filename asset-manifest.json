@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/juventus-react/static/css/main.c034ae93.css",
+    "main.js": "/juventus-react/static/js/main.0870b41a.js",
+    "static/js/787.54fa8f25.chunk.js": "/juventus-react/static/js/787.54fa8f25.chunk.js",
+    "static/media/Juve-Logo.svg": "/juventus-react/static/media/Juve-Logo.4f261372a5eeabb87dd2b78f86a0d2b6.svg",
+    "index.html": "/juventus-react/index.html",
+    "main.c034ae93.css.map": "/juventus-react/static/css/main.c034ae93.css.map",
+    "main.0870b41a.js.map": "/juventus-react/static/js/main.0870b41a.js.map",
+    "787.54fa8f25.chunk.js.map": "/juventus-react/static/js/787.54fa8f25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c034ae93.css",
+    "static/js/main.0870b41a.js"
+  ]
+}
